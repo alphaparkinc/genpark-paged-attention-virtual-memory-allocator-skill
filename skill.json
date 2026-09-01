@@ -1,0 +1,41 @@
+{
+  "name": "genpark-paged-attention-virtual-memory-allocator-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Paged attention virtual memory allocator managing non-contiguous GPU KV cache blocks with near-zero memory fragmentation.",
+  "author": "genpark",
+  "category": "llm-infrastructure",
+  "tags": [
+    "vllm",
+    "paged-attention",
+    "kv-cache",
+    "cuda-memory",
+    "high-throughput-serving"
+  ],
+  "inputs": {
+    "active_concurrent_requests": {
+      "type": "integer"
+    },
+    "block_size_tokens": {
+      "type": "integer"
+    },
+    "total_gpu_physical_blocks": {
+      "type": "integer"
+    }
+  },
+  "outputs": {
+    "allocator_cycle_id": {
+      "type": "string"
+    },
+    "virtual_block_hit_ratio_pct": {
+      "type": "number"
+    },
+    "kv_cache_throughput_gain_x": {
+      "type": "number"
+    },
+    "cuda_memory_saved_gb": {
+      "type": "number"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
